@@ -2,18 +2,6 @@ package com.example.presentation;
 
 
 public class ControllerUtils {
-
-    public static final int MIN_BODIES_NUM = 1;
-    public static final int MAX_BODIES_NUM = 1024;
-    public static final int DEFAULT_BODIES_NUM = 4;
-
-    public static final int MIN_DELTA_TIME = 16;
-    public static final int MAX_DELTA_TIME = 128;
-    public static final int DEFAULT_DELTA_TIME = MIN_DELTA_TIME;
-
-    public static final double MIN_ERROR_DISTANCE = 1e2;
-    public static final double MAX_ERROR_DISTANCE = 1e3;
-    public static final double DEFAULT_ERROR_DISTANCE = MIN_ERROR_DISTANCE;
     public static double distance(Dot d1, Dot d2) {
         var p1 = d1.getP();
         var p2 = d2.getP();

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
 <AnchorPane fx:id="mainPane" prefWidth="800" prefHeight="600" xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.demo1.HelloController">
+    <Button
+    fx:id="buttonStat"
+    prefWidth="80"
+    prefHeight="20"
+    text="Statistic"
+    >
+
+    </Button>
 </AnchorPane>

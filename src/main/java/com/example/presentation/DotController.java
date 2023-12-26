@@ -12,7 +12,6 @@ public class DotController {
     private final Dot[] dots;
     private final Dot mainDot;
     private final Thread thread;
-    private final Runnable runnable;
 
     public DotController(int dotsCount, double maxX, double maxY) {
         var random = new Random();
@@ -24,13 +23,11 @@ public class DotController {
         var cords = new Dot.Coords(random.nextDouble(maxX), random.nextDouble(maxY));
         mainDot = new Dot(cords, Dots.DEFAULT_BODY_MASS);
         dots[dots.length - 1] = mainDot;
-        thread = new Thread(runnable);
         thread.setDaemon(true);
         thread.start();
     }
 
-    {
-        runnable = () -> {
+    {thread = new Thread(() -> {
             long lastUpdate = -1;
             while (true) {
                 if (System.currentTimeMillis() - lastUpdate >= dt) {
@@ -39,7 +36,7 @@ public class DotController {
                     lastUpdate = System.currentTimeMillis();
                 }
             }
-        };
+        });
     }
 
     private void recalcBodiesForces() {
